@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ten Code & Other Code Reference</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LSPD Radio Code & SOP Handbook</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -17,6 +18,14 @@
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #007BFF;
+      font-size: 36px;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #007BFF;
+      padding-bottom: 10px;
     }
     h1, h2 {
       text-align: center;
@@ -39,12 +48,31 @@
     tr:nth-child(even) {
       background-color: #f9f9f9;
     }
+    blockquote {
+      background-color:#f8f9fa;
+      padding:15px;
+      border-left:5px solid #007BFF;
+      margin:20px 0;
+      font-style:italic;
+    }
   </style>
 </head>
 <body>
+  <div class="container"> 
+    <h1>LSPD Radio Code & SOP Handbook</h1>
+    <h2 style="margin-top: 50px;">Miranda Rights</h2>
+    <p>
+      Upon arrest, suspects must be read their <strong>Miranda Rights</strong> to ensure legality of custody and protect constitutional rights:
+    </p>
+    <blockquote>
+      "You have the right to remain silent. Anything you say can and will be used against you in the court of law. 
+      You have the right to an attorney. If you cannot afford one, one will be provided for you."
+    </blockquote>
+  </div> 
+
   <div class="container">
-    <h1>📻 Radio Code Reference</h1>
-    <h2>3.1.1 Ten Code (Common)</h2>
+    <h2>📻 Radio Code Reference</h2>
+    <h2>Ten Code (Common)</h2>
     <table>
       <tr><th>Code</th><th>Description</th></tr>
       <tr><td>10-1</td><td>Meeting — Used when organizing or requesting a face-to-face meeting.</td></tr>
@@ -104,7 +132,7 @@
       <tr><td>10-99</td><td>Area Under Investigation</td></tr>
     </table>
 
-    <h2 style="margin-top: 50px;">3.1.2 Other Code</h2>
+    <h2 style="margin-top: 50px;">Other Code</h2>
     <table>
       <tr><th>Code</th><th>Description</th></tr>
       <tr><td>Code 0</td><td>Officer Down / High Alert Situation (e.g., armed robbery in progress).</td></tr>
@@ -118,6 +146,66 @@
       <tr><td>Code 7</td><td>Meal Break — On lunch or scheduled break.</td></tr>
       <tr><td>Code 99</td><td>Officer Needs Urgent Help — All available units respond.</td></tr>
     </table>
+
+    <h2 style="margin-top: 50px;">📡 How to Use the 10-Code (Reporting & Updating)</h2>
+    <p>Berikut adalah contoh struktur penggunaan 10-code saat melakukan pelaporan melalui radio atau dispatch.</p>
+
+    <h3>🔹 Initial Reporting</h3>
+    <div style="background-color: #f0f8ff; padding: 10px; border-radius: 5px; margin-bottom: 15px;">
+      <strong>Contoh:</strong><br>
+      <em>"Dispatch, Adam-20 would be doing 10-38 situation on <strong>[nama jalan]</strong>, 10-60 gonna be <strong>[deskripsi kendaraan]</strong> with <strong>[jumlah penumpang]</strong> occupants inside. Standby for future updates."</em>
+    </div>
+
+    <p>Jika situasi berubah menjadi pengejaran atau pursuit (10-57), lakukan update sebagai berikut:</p>
+
+    <h3>🔹 Updating the Situation</h3>
+    <div style="background-color: #fef9e7; padding: 10px; border-radius: 5px; margin-bottom: 15px;">
+      <strong>Contoh:</strong><br>
+      <em>"Dispatch, for the last 10-38 situation on <strong>[nama jalan]</strong>, it's now changing into active 10-57. Requesting 10-78 on my 20. Suspect is now heading <strong>[arah pelarian]</strong>."</em><br><br>
+      <strong>Contoh Detail:</strong><br>
+      <em>"Suspect is now heading <strong>West</strong> on Vespucci Blvd, taking left on intersection, heading <strong>South</strong> on San Andreas Ave."</em>
+    </div>
+
+    <p><strong>Struktur Update yang Disarankan:</strong> Arah mata angin – nama jalan – landmark atau informasi tambahan (optional)</p>
+    <ul>
+      <li><strong>Action</strong> – Apa yang sedang dilakukan (e.g. "heading", "belok kiri")</li>
+      <li><strong>Arah mata angin</strong> – Contoh: North, South, East, West</li>
+      <li><strong>Nama jalan</strong> – Lokasi atau jalur</li>
+      <li><strong>Informasi tambahan (optional)</strong> – Landmark, lalu lintas, deskripsi suspect</li>
+    </ul>
+
+    <h2 style="margin-top: 50px;">Callsign</h2>
+    <p><strong>Format:</strong> [Beat/Division/Zone] - [Unit Type] - [Badge Number]</p>
+    <p><strong>Example:</strong> <code>10-Lincoln-20</code></p>
+
+    <h3 style="margin-top: 20px;">Unit Type Clarification:</h3>
+    <ul>
+      <li><strong>Lincoln</strong> — Digunakan untuk <u>solo patrol</u> (1 petugas dalam satu unit).</li>
+      <li><strong>Adam</strong> — Digunakan untuk <u>multi-officer unit</u> (2 hingga maksimal 3 petugas dalam satu kendaraan).</li>
+    </ul>
+    <p>
+      <strong>Contoh:</strong><br>
+      <code>10-Lincoln-20</code> = Unit patroli tunggal (solo)<br>
+      <code>10-Adam-20</code> = Unit dengan 2 Officer atau lebih (Max 3)
+    </p>
+
+    <h3 style="margin-top: 30px;">High Command Callsign Option</h3>
+    <table>
+      <tr><th>Rank</th><th>Format</th><th>Example</th></tr>
+      <tr><td>Chief of Police</td><td>Chief-[Badge No]</td><td>Chief-01</td></tr>
+      <tr><td>Deputy Chief</td><td>Deputy-[Badge No]</td><td>Deputy-02</td></tr>
+      <tr><td>Captain</td><td>Captain-[Badge No]</td><td>Captain-04</td></tr>
+      <tr><td>Lieutenant</td><td>LT-[Badge No]</td><td>LT-09</td></tr>
+    </table>
+
+    <h2 style="margin-top: 50px;">Example Usage</h2>
+    <div style="background-color: #eef5ff; padding: 15px; border-left: 5px solid #007BFF; font-style: italic;">
+      "10-L-20 requesting backup, Code 3, 10-20 Mirror Park Blvd."
+    </div>
   </div>
+
+  <footer>
+    © 2025 LSPD Handbook | Built for roleplay & training purposes | Sunshine Roleplay Indonesia | Agoy ganteng
+  </footer>
 </body>
 </html>
