@@ -11,6 +11,7 @@
       margin: 0;
       padding: 20px;
     }
+  
     .container {
       max-width: 900px;
       margin: auto;
@@ -19,6 +20,7 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
+  
     h1 {
       text-align: center;
       color: #007BFF;
@@ -27,35 +29,58 @@
       border-bottom: 3px solid #007BFF;
       padding-bottom: 10px;
     }
+  
     h1, h2 {
       text-align: center;
       color: #333;
     }
+  
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
     }
+  
     th, td {
       padding: 10px;
       border: 1px solid #ccc;
       text-align: left;
     }
+  
     th {
       background-color: #007BFF;
       color: white;
     }
+  
     tr:nth-child(even) {
       background-color: #f9f9f9;
     }
-    blockquote {
-      background-color:#f8f9fa;
-      padding:15px;
-      border-left:5px solid #007BFF;
-      margin:20px 0;
-      font-style:italic;
+  
+    /* ✅ Force green highlight even if row is nth-child(even) */
+    tr.highlight {
+      background-color: #90EE90 !important;
+      font-weight: bold;
+      color: #000;
     }
+  
+    blockquote {
+      background-color: #f8f9fa;
+      padding: 15px;
+      border-left: 5px solid #007BFF;
+      margin: 20px 0;
+      font-style: italic;
+    }
+    ul.centered-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.8;
+      list-style: none;
+      padding-left: 0;
+    }
+    
   </style>
+  
 </head>
 <body>
   <div class="container"> 
@@ -88,7 +113,6 @@
       <tr><td>10-2</td><td>Radio Signal Good — Used for radio checks or confirming clarity.</td></tr>
       <tr><td>10-3</td><td>Stop Transmitting — All units hold radio traffic unless urgent.</td></tr>
       <tr><td>10-4</td><td>Acknowledged / Understood — Standard confirmation.</td></tr>
-      <tr><td>10-5</td><td>Relay — Relay information to another officer or dispatch.</td></tr>
       <tr><td>10-6</td><td>Busy, Stand By — Temporarily unavailable, but monitoring radio.</td></tr>
       <tr><td>10-7</td><td>Out of Service — Officer is not available (e.g., meal break, paperwork).</td></tr>
       <tr><td>10-8</td><td>In Service — Officer is available and ready to respond.</td></tr>
@@ -99,7 +123,6 @@
       <tr><td>10-13a</td><td>Officer Down (Emergency) — Officer requires immediate EMS/backup.</td></tr>
       <tr><td>10-13b</td><td>Officer Down (Non-Emergency) — Officer down, but situation is under control.</td></tr>
       <tr><td>10-14</td><td>Medic Down — EMS member injured.</td></tr>
-      <tr><td>10-15</td><td>Suspect in Custody (Alternate Code for 10-95).</td></tr>
       <tr><td>10-16</td><td>Domestic Disturbance — Call involving domestic violence or household conflict.</td></tr>
       <tr><td>10-20</td><td>Location — Requesting or giving current location (e.g., “What’s your 20?”).</td></tr>
       <tr><td>10-22</td><td>Disregard Last Message — Cancel or disregard the previous transmission.</td></tr>
@@ -212,6 +235,86 @@
       "10-L-20 requesting backup, Code 3, 10-20 Mirror Park Blvd."
     </div>
   </div>
+
+  <div class="container">
+    <h2 style="margin-top: 50px;">🚓 SOP: Vehicle/Foot Pursuit</h2>
+  
+    <h3 style="color: #007BFF;">📍 Initiation of Pursuit</h3>
+    <ul style="line-height: 1.7;">
+      <li>Pengejaran <strong>hanya boleh dilakukan</strong> jika:
+        <ul>
+          <li>Tersangka melakukan <strong>kejahatan berat (felony)</strong>.</li>
+          <li>Mengemudi secara <strong>berbahaya</strong> dan membahayakan publik.</li>
+          <li>Ada indikasi kuat tersangka akan <strong>melarikan diri</strong> dan tidak bisa ditangkap dengan metode lain.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Police Officer I (Trainee)</strong> dan <strong>Police Officer II</strong> <u>tidak diperbolehkan</u> menginisiasi pengejaran tanpa izin langsung dari <strong>Police Officer III, Sergeant</strong>, atau lebih tinggi.
+      </li>
+      <li>
+        Officer harus segera menginformasikan melalui radio:
+        <ul>
+          <li><strong>10-57</strong> (Pursuit in Progress)</li>
+          <li>Deskripsi kendaraan (warna, model, pelat)</li>
+          <li>Jumlah suspect</li>
+          <li>Lokasi dan arah perjalanan</li>
+          <li>Alasan pengejaran</li>
+        </ul>
+      </li>
+    </ul>
+  
+    <h3 style="color: #007BFF;">🧭 Pursuit Command Structure</h3>
+    <ul style="line-height: 1.7;">
+      <li><strong>IC (In-Charge)</strong> secara default adalah officer pertama yang memulai pengejaran.</li>
+      <li>Officer berpangkat <strong>Police Officer II</strong> ke atas dapat mengambil alih IC jika mendapat <strong>izin dari Sergeant/Supervisor</strong>.</li>
+      <li><strong>Supervisor (S-Unit)</strong> dapat menghentikan pengejaran kapan saja — misalnya jika situasi lebih genting muncul seperti penculikan pejabat tinggi.</li>
+    </ul>
+  
+    <h3 style="color: #007BFF;">🏃‍♂️ During the Pursuit</h3>
+    <p><strong>Maksimal 3 unit aktif</strong> boleh ikut pengejaran:</p>
+    <ul style="line-height: 1.7;">
+      <li><strong>Primary Unit</strong> — Assigned by IC</li>
+      <li><strong>Secondary Unit</strong> — Membantu komunikasi dan call-out</li>
+      <li><strong>Alternate Unit</strong> — Siap untuk block road atau deploy spike strip</li>
+      <li><strong>Supervisor (optional)</strong> — Bila tersedia, memantau jalannya pengejaran</li>
+    </ul>
+    <p>Selama pengejaran, setiap unit wajib:</p>
+    <ul style="line-height: 1.7;">
+      <li>Memberikan <strong>update berkala</strong> (arah, kecepatan, situasi lalu lintas)</li>
+      <li>Menjaga <strong>jarak aman</strong> dan <strong>tidak saling menabrak</strong></li>
+      <li><strong>Air Unit/Helikopter</strong> dapat digunakan dengan izin atasan</li>
+    </ul>
+  
+    <h3 style="color: #007BFF;">⚠️ Tactics & Use of Force</h3>
+    <p>
+      Penggunaan taktik khusus seperti:
+    </p>
+    <ul style="line-height: 1.7;">
+      <li><strong>Spike Strip</strong></li>
+      <li><strong>PIT Maneuver</strong></li>
+      <li><strong>Road Block</strong></li>
+    </ul>
+    <p>Hanya boleh dilakukan <strong>dengan izin dari IC atau Sergeant</strong>.</p>
+  </div>
+  
+  <div class="container">
+    <h2 style="margin-top: 50px;">👮‍♂️LSPD Rank Structure</h2>
+    <ul class="centered-list">
+      <li><strong>Police Officer I</strong> — <em>Trainee/Rookie</em> (Tanpa Chevron)</li>
+      <li><strong>Police Officer II</strong> — <em>Officer</em> (Chevron 1)</li>
+      <li><strong>Police Officer III</strong> — <em>Senior Officer</em> (Chevron 2)</li>
+      <li><strong>Sergeant I</strong></li>
+      <li><strong>Sergeant II</strong></li>
+      <li><strong>Lieutenant</strong></li>
+      <li><strong>Captain</strong></li>
+      <li><strong>Commander</strong></li>
+      <li><strong>Assistant Chief of Police</strong></li>
+      <li><strong>Deputy Chief</strong></li>
+      <li><strong>Chief of Police</strong></li>
+    </ul>
+  </div>
+  
+  
 
   <footer>
     © 2025 LSPD Handbook | Built for roleplay & training purposes | Sunshine Roleplay Indonesia | Agoy ganteng
